@@ -41,17 +41,17 @@ Welcome to download [DevTutor](https://apps.apple.com/app/devtutor/id6471227008)
 ## Usage
 
 ```swift
-import ColorSelector
+import Colorful
 
 struct ContentView: View {
     @State var color: Color? = Color.blue
     @State var colorClear: Color? = .clear
     
     var body: some View {
-        ColorSelector("Color", selection: $color, arrowEdge: .bottom)
+        Colorful("Color", selection: $color, arrowEdge: .bottom)
             .frame(width: 210)
             
-        ColorSelector(selection: $colorClear, arrowEdge: .top)
+        Colorful(selection: $colorClear, arrowEdge: .top)
     }
 }
 ```
@@ -59,13 +59,13 @@ struct ContentView: View {
 Use the `showsAlpha` modifier to control the visibility of the alpha (opacity) slider in the picker panel.
 
 ```swift
-import ColorSelector
+import Colorful
 
 struct ContentView: View {
     @State var color: Color? = .clear
     
     var body: some View {
-        ColorSelector(selection: $color)
+        ColorfulPicker(selection: $color)
             .showsAlpha(false)
     }
 }

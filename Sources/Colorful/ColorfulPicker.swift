@@ -8,12 +8,12 @@
 
 import SwiftUI
 
-class ColorSelectorModel: ObservableObject {
+class ColorfulPickerModel: ObservableObject {
     @Published var showsAlpha: Bool = true
 }
 
-public struct ColorSelector: View {
-    @ObservedObject var viewModel: ColorSelectorModel = .init()
+public struct ColorfulPicker: View {
+    @ObservedObject var viewModel: ColorfulPickerModel = .init()
     @Binding var selection: Color?
     @State private var popover: Bool = false
     var title: LocalizedStringKey?
@@ -111,26 +111,26 @@ public struct ColorSelector: View {
         selection = Color(hue: hue, saturation: saturation, brightness: brightness, opacity: alpha)
     }
     
-    public func showsAlpha(_ value: Bool) -> ColorSelector {
+    public func showsAlpha(_ value: Bool) -> ColorfulPicker {
         viewModel.showsAlpha = value
-        return self as ColorSelector
+        return self as ColorfulPicker
     }
-    public func showsAlpha(_ value: Binding<Bool>) -> ColorSelector {
+    public func showsAlpha(_ value: Binding<Bool>) -> ColorfulPicker {
         viewModel.showsAlpha = value.wrappedValue
-        return self as ColorSelector
+        return self as ColorfulPicker
     }
 }
 
 #Preview {
     @Previewable @State var color: Color? = Color.blue
     @Previewable @State var colorClear: Color? = .clear
-    ColorSelector("Color", selection: $color, arrowEdge: .bottom)
+    ColorfulPicker("Color", selection: $color, arrowEdge: .bottom)
         .frame(width: 210)
         .padding()
-    ColorSelector(selection: $color)
+    ColorfulPicker(selection: $color)
         .showsAlpha(false)
         .padding()
-    ColorSelector(selection: $colorClear, arrowEdge: .top).padding()
+    ColorfulPicker(selection: $colorClear, arrowEdge: .top).padding()
     
     color.frame(width: 60, height: 30)
 }
