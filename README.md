@@ -71,32 +71,6 @@ struct ContentView: View {
 }
 ```   
 
-### Saturation
-
-```swift
-struct ContentView: View {
-    @State var saturation: CGFloat = 1.0
-    @State var brightness: CGFloat = 1.0
-    @State var hue: CGFloat = 0.0
-    
-    var body: some View {
-        Saturation(
-            saturation: $saturation,
-            brightness: $brightness,
-            hue: hue
-        )
-        .frame(width: 200, height: 200)
-        
-        Saturation(
-            saturation: $saturation,
-            brightness: $brightness,
-            hue: hue
-        )
-        .frame(width: 200, height: 120)
-    }
-}
-```
-
 ## License
 
 Licensed under the MIT License.
