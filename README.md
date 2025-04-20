@@ -3,8 +3,7 @@ Colorful
 
 A SwiftUI color picker component library for macOS, designed to replace the default ColorPicker component.
 
-![ColorSelector for macOS](https://github.com/user-attachments/assets/aab49a01-6c3d-40e7-86c2-4013f2b8cc8d)
-
+![Colorful for macOS](https://github.com/user-attachments/assets/89f6d76a-8e6d-47da-b8e9-96009110e57c)
 
 ✦ My macOS/iOS application ✦
 
